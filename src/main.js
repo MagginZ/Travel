@@ -6,6 +6,9 @@ import router from './router'
 import './assets/styles/reset.css'
 import fastClick from 'fastclick'
 Vue.config.productionTip = false
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
 fastClick.attach(document.body) // 解决移动端三秒延迟问题
 /* eslint-disable no-new */
 new Vue({
