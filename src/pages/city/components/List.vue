@@ -29,41 +29,8 @@
                     </div>
                 </div>
             </div>
-            <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    
-                </div>
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    
-                </div>
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    
-                </div>
-                <div class="title border-topbottom">A</div>
+            <div class="area" v-for="item in cities" :key="item" :ref="item">
+                <div class="title border-topbottom">{{item}}</div>
                 <div class="item-list">
                     <div class="item">阿拉尔</div>
                     <div class="item">阿拉尔</div>
@@ -82,8 +49,25 @@
 <script>
 import BScroll from 'better-scroll'
 export default {
+    props : {
+        letter: String
+    },
+    data () {
+        return {
+            cities: ['A','B','C','D','E']
+        }
+    },
   mounted () {
       this.scroll = new BScroll(this.$refs.wrapper)
+  },
+  // 监听letter变化
+  watch: {
+    letter () {
+        if (this.letter) {
+            const element = this.$refs[this.letter][0] // 获取对应的区域。需要在循环中使用:ref获取城市代码
+            this.scroll.scrollToElement(element) // better-scroll 提供的方法，滚动到此元素位置
+        }
+    }
   }
 }
 </script>
