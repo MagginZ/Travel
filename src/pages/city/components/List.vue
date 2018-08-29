@@ -1,0 +1,132 @@
+<template>
+    <div class="list" ref="wrapper">
+        <div>
+            <div class="area">
+                <div class="title border-topbottom">当前城市</div>
+                <div class="button-list">
+                    <div class="button-wrapper">
+                    <div class="button">北京</div>
+                    </div>
+                </div>
+            </div>
+            <div class="area">
+                <div class="title border-topbottom">热门城市</div>
+                <div class="button-list">
+                    <div class="button-wrapper">
+                    <div class="button">北京</div>
+                    </div>
+                    <div class="button-wrapper">
+                    <div class="button">北京</div>
+                    </div>
+                    <div class="button-wrapper">
+                    <div class="button">北京</div>
+                    </div>
+                    <div class="button-wrapper">
+                    <div class="button">北京</div>
+                    </div>
+                    <div class="button-wrapper">
+                    <div class="button">北京</div>
+                    </div>
+                </div>
+            </div>
+            <div class="area">
+                <div class="title border-topbottom">A</div>
+                <div class="item-list">
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    
+                </div>
+                <div class="title border-topbottom">A</div>
+                <div class="item-list">
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    
+                </div>
+                <div class="title border-topbottom">A</div>
+                <div class="item-list">
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    
+                </div>
+                <div class="title border-topbottom">A</div>
+                <div class="item-list">
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    <div class="item">阿拉尔</div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import BScroll from 'better-scroll'
+export default {
+  mounted () {
+      this.scroll = new BScroll(this.$refs.wrapper)
+  }
+}
+</script>
+
+<style scoped>
+.border-topbottom{
+    border-bottom: 1px solid #ccc;
+}
+.list{
+    position:absolute;
+    top:4.9rem;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.title{
+    line-height: 2rem;
+    background: #eee;
+    padding-left: .5rem;
+    font-size: 1rem;
+    color: #666;
+}
+.button-list{
+  padding:.1rem .6rem .1rem .1rem;
+  overflow: hidden;
+}
+.button-wrapper{
+    float: left;
+    width: 33.33%;
+    color: #666;
+}
+.button{
+    margin: .3rem;
+    text-align: center;
+    padding:.2rem 0;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+.item-list .item{
+    line-height:2rem;
+    color: #666;
+    padding-left: .6rem;
+    border-bottom: 1px solid #ccc;
+}
+</style>
