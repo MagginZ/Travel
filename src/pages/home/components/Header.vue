@@ -2,14 +2,22 @@
     <div class="header">
         <div class="header-left"><div class="iconfont icon-fanhui back-icon"></div></div>
         <div class="header-input"><span class="iconfont icon-sousuo"></span> 输入城市/景点/游玩主题</div>
-        <div class="header-right">城市 <span class="iconfont icon-zhankai arrow-icon"></span></div>
+        <div class="header-right" @click="handleClick">{{city}}<span class="iconfont icon-zhankai arrow-icon"></span></div>
                 
     </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  props: {
+    city:String
+  },
+  methods: {
+    handleClick () {
+      this.$router.push('/city')
+    }
+  }
 }
 </script>
 
