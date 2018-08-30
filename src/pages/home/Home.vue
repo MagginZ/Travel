@@ -20,7 +20,8 @@ export default {
       HomeHeader,
       HomeSwiper,
       Icons,
-      Weekend
+      Weekend,
+      Recommend
   },
   data () {
     return {

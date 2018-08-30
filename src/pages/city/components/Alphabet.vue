@@ -5,9 +5,7 @@
         :key="index" 
         :ref="item"
         @click="handleLetterClick(item)"
-        @touchmove="handleTouchMove"
-         @touchstart="handleTouchStart"
-         @touchend="handleTouchEnd">{{item}}</li>
+        >{{item}}</li>
     </ul>
 </template>
 
