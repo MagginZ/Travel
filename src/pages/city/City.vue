@@ -1,7 +1,7 @@
 <template>
     <div>
         <city-header></city-header>
-        <city-search :cities="cities" @changeCity="getCity"></city-search>
+        <city-search :cities="cities"></city-search>
         <city-list :letter="letter"></city-list>
         <city-alphabet @change="handleGetCityInfoSucc"></city-alphabet>
     </div>
@@ -28,9 +28,6 @@ export default {
   methods: {
     handleGetCityInfoSucc (letter) {
       this.letter = letter
-    },
-    getCity (city) {
-      console.log(city)
     }
   }
 }

@@ -5,41 +5,22 @@
                 <div class="title border-topbottom">当前城市</div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                    <div class="button">北京</div>
+                    <div class="button">{{this.$store.state.city}}</div>
                     </div>
                 </div>
             </div>
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrapper">
-                    <div class="button">北京</div>
-                    </div>
-                    <div class="button-wrapper">
-                    <div class="button">北京</div>
-                    </div>
-                    <div class="button-wrapper">
-                    <div class="button">北京</div>
-                    </div>
-                    <div class="button-wrapper">
-                    <div class="button">北京</div>
-                    </div>
-                    <div class="button-wrapper">
-                    <div class="button">北京</div>
+                    <div class="button-wrapper" v-for="item in city" :key="item" @click="handleCityClick(item)">
+                         <div class="button">{{item}}</div>
                     </div>
                 </div>
             </div>
             <div class="area" v-for="item in cities" :key="item" :ref="item">
                 <div class="title border-topbottom">{{item}}</div>
                 <div class="item-list">
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    <div class="item">阿拉尔</div>
-                    
+                    <div class="item" v-for="item in city" @click="handleCityClick(item)" :key="item">{{item}}</div>
                 </div>
             </div>
         </div>
@@ -54,11 +35,19 @@ export default {
     },
     data () {
         return {
-            cities: ['A','B','C','D','E']
+            cities: ['A','B','C','D','E'],
+            city: ['北京', '上海' , '成都', '重庆', '广州'],
         }
     },
   mounted () {
       this.scroll = new BScroll(this.$refs.wrapper)
+  },
+  methods: {
+      handleCityClick (city) {
+        // this.$store.dispatch('changeCity', city)
+        this.$store.commit('changeCity', city)
+        this.$router.push('/')
+      }
   },
   // 监听letter变化
   watch: {

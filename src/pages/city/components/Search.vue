@@ -26,7 +26,9 @@ export default {
   },
   methods: {
       handleClick (item) {
-        this.$emit('changeCity', item)
+        this.$store.commit('changeCity', item)
+        this.isSearch = false
+        this.$router.push('/')
       }
   },
   watch: {
