@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { mapMutations} from 'vuex'
 export default {
   props: {
     cities: Array
@@ -26,10 +27,12 @@ export default {
   },
   methods: {
       handleClick (item) {
-        this.$store.commit('changeCity', item)
+        // this.$store.commit('changeCity', item)
+        changeCity(item)
         this.isSearch = false
         this.$router.push('/')
-      }
+      },
+      ...mapMutations['changeCity']
   },
   watch: {
       keyword () {

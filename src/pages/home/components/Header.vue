@@ -3,15 +3,20 @@
         <div class="header-left"><div class="iconfont icon-fanhui back-icon"></div></div>
         <div class="header-input"><span class="iconfont icon-sousuo"></span> 输入城市/景点/游玩主题</div>
         <div class="header-right" @click="handleClick">
-          {{this.$store.state.city}}  
+          <!-- {{this.$store.state.city}}   -->
+          {{this.city}}
         <span class="iconfont icon-zhankai arrow-icon"></span></div>
                 
     </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'HomeHeader',
+  computed: {
+    ...mapState(['city']) // 将city印射简化 this.$store.state.city
+  },
   methods: {
     handleClick () {
       this.$router.push('/city')
