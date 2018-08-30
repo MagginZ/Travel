@@ -14,7 +14,6 @@ export default {
 </script>
 
 <style scoped>
-@import url('//at.alicdn.com/t/font_807286_6kvddqfqgf3.css');
 .header{
     height: 2.86rem;
     line-height: 2.86rem;

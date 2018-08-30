@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import url('//at.alicdn.com/t/font_807286_6kvddqfqgf3.css');
 @import '~styles/varibles.styl'
 .header
     display:flex
