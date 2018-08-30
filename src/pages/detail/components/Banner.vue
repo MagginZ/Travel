@@ -1,5 +1,6 @@
 <template>
-    <div class="banner">
+<div>
+    <div class="banner" @click="showGallary=true">
         <img src="http://img1.qunarzz.com/sight/p0/1807/ad/ad574bfe6c9e1ceda3.img.png_600x330_0046c90a.png" class="banner-img" alt="">
         <div class="banner-info">
             <div class="banner-title">
@@ -10,11 +11,26 @@
             </div>            
         </div>
     </div>
+    <gallay-component :imgs="imgs" v-show="showGallary"></gallay-component>
+</div>
 </template>
 
 <script>
+import GallayComponent from '@/components/Gallary'
 export default {
-
+  components: {
+      GallayComponent
+  },
+  data () {
+    return {
+         imgs: [
+            {id: '0001', imgUrl: 'http://img1.qunarzz.com/sight/p0/1712/ed/edd5cde30ebe91d0a3.img.jpg_r_800x800_2595694d.jpg'},
+            {id: '0002', imgUrl: 'http://img1.qunarzz.com/sight/p0/1712/16/165c7022105c4bb4a3.img.jpg_r_800x800_84b951d0.jpg'},
+            {id: '0003', imgUrl: 'http://img1.qunarzz.com/sight/p0/1712/27/27a3e61820223732a3.img.jpg_r_800x800_dd3b3b71.jpg'}
+        ],
+        showGallary: false
+    }
+  }
 }
 </script>
 
