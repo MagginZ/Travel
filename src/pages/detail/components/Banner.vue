@@ -11,7 +11,7 @@
             </div>            
         </div>
     </div>
-    <gallay-component :imgs="imgs" v-show="showGallary"></gallay-component>
+    <gallay-component :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></gallay-component>
 </div>
 </template>
 
@@ -29,6 +29,11 @@ export default {
             {id: '0003', imgUrl: 'http://img1.qunarzz.com/sight/p0/1712/27/27a3e61820223732a3.img.jpg_r_800x800_dd3b3b71.jpg'}
         ],
         showGallary: false
+    }
+  },
+  methods: {
+    handleGallaryClose () {
+      this.showGallary = false
     }
   }
 }
