@@ -3,13 +3,11 @@
         <router-link to="/" tag="div" class="header-abs" v-show="showAbs">
             <div class="iconfont icon-fanhui header-abs-back"></div>
         </router-link>
-        <div class="header-fiexd" v-show="!showAbs" :style="opacityStyle">
-            <div class="header">
+        <div class="header-fixed" v-show="!showAbs" :style="opacityStyle">
                 <router-link to="/">
                     <i class="iconfont icon-fanhui header-back"></i>
                 </router-link>
                 景点详情
-            </div>
         </div>
     </div>
 </template>
@@ -26,6 +24,9 @@ export default {
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)  
   },
   methods: {
     handleScroll () {
@@ -59,7 +60,8 @@ export default {
     color: #fff;
     font-size: 1rem;
 }
-.header{
+.header-fixed{
+    z-index: 2;
     height: 2.86rem;
     line-height: 2.86rem;
     text-align: center;

@@ -11,15 +11,19 @@
             </div>            
         </div>
     </div>
-    <gallay-component :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></gallay-component>
+    <fade>
+        <gallay-component :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></gallay-component>
+    </fade>
 </div>
 </template>
 
 <script>
 import GallayComponent from '@/components/Gallary'
+import Fade from '@/components/Fade'
 export default {
   components: {
-      GallayComponent
+      GallayComponent,
+      Fade
   },
   data () {
     return {
